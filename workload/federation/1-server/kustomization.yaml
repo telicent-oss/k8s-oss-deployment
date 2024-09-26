@@ -1,0 +1,25 @@
+#
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: tc-federation
+
+resources:
+  - ../../../telicent/profiles/oss/federation/server
+
+components:
+  - ./patches/virtualservice/host/federation
+  # Optional: Change ingress principal
+  # - ./patches/authorizationpolicy/serviceaccount
+configMapGenerator:
+  - name: federator-server-properties
+    files:
+      - ./patches/config/server.properties
+    behavior: replace
+
+secretGenerator:
+  - name: federator-server-access-map
+    files:
+      - ./patches/config/access.json
+    options:
+      disableNameSuffixHash: true

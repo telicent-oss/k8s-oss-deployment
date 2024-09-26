@@ -1,0 +1,44 @@
+#
+# Copyright (C) 2024 Telicent Limited
+#
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../../telicent/profiles/oss/access
+
+# Generic Component to substitute your domain in Istio policy
+components:
+  - ../components/patches/virtualservice/host/apps
+  # Optional depending on Istio configuration
+  # - ../components/patches/authorizationpolicy/serviceaccount
+
+# NB this is for illustrative purposes only. Secrets management is out of the
+# scope of the OSS deployment.
+secretGenerator:
+  - name: telicent-access-db-password
+    options:
+      disableNameSuffixHash: true
+    literals:
+      - password=change.to.access.api.mongodb.password
+    behavior: replace
+
+# Merge/Replace config(s) tailored for your environment
+configMapGenerator:
+  # Access-API Config Patches
+  - name: access-api
+    behavior: merge
+    envs:
+      - api/patches/config/api.env
+  # Access-APP Config Patches
+  - name: access-ui-env-configjs
+    behavior: replace
+    files:
+      - ui/patches/config/env-config.js
+
+# Remove non-opensource components from Authorization policy
+patches:
+  - path: api/patches/authorizationpolicy/allow-core-apps-to-api.yaml
+    target:
+      kind: AuthorizationPolicy
+      name: allow-core-apps-to-api

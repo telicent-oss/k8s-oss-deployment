@@ -1,0 +1,13 @@
+#
+# Copyright (C) 2024 Telicent Limited
+#
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+# Defines the virtual service host used for the istio configuration
+# Using this component will patch VirtualServices resources to the same host value,
+# filtered by defined resource names
+patches:
+  - path: patch/host.yaml
+    target:
+      kind: VirtualService
+      name: federation-server-ingress

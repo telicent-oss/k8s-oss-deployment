@@ -1,0 +1,35 @@
+#
+# Copyright (C) 2024 Telicent Limited
+#
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../../telicent/profiles/oss/smart-cache-graph
+
+# Generic Component to substitute your domain in Istio policy
+components:
+  - ../components/patches/virtualservice/host/apps
+  # Optional depending on Istio configuration
+  # - ../components/patches/authorizationpolicy/serviceaccount
+
+patches:
+  - patch: |-
+      - op: replace
+        path: /spec/storageClassName
+        value: override.with.block.storage.class.name
+    target:
+      kind: PersistentVolumeClaim
+
+# Merge/Replace config(s) tailored for your environment
+configMapGenerator:
+  # Graph-Server Config Patches. See https://github.com/telicent-oss/smart-cache-graph/blob/main/docs/configuration-smart-cache-graph.md
+  - name: graph-server
+    behavior: merge
+    envs:
+      - server/patches/config/server.env
+  # Graph-Server Fuseki Config Patches - Update fk:bootstrapServers properties in the config.ttl with your Kafka location as a minimum
+  - name: graph-server-fuseki
+    behavior: replace
+    files:
+      - server/patches/config/config.ttl

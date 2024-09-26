@@ -1,0 +1,22 @@
+{
+    "telicent.io": {
+        "registered_client": "telicent.io",
+        "topics": [
+            {
+                "name": "knowledge",
+                "granted_at": "2023-05-09T15:45:25.371402+01:00"
+            }
+        ],
+        "api": {
+            "hashed_key": "INSERT.CLIENT.PASSWORD.HASH",
+            "salt": "INSERT.CLIENT.PASSWORD.SALT",
+            "issued": "2023-05-09T14:43:37.724246+01:00",
+            "revoked": false
+        },
+        "attributes": {
+            "nationality": "GBR",
+            "clearance": "O",
+            "organisation_type": "NON-GOV"
+        }
+    }
+}

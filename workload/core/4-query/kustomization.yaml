@@ -1,0 +1,21 @@
+#
+# Copyright (C) 2024 Telicent Limited
+#
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../../telicent/profiles/oss/query
+# Generic Component to substitute your domain in Istio policy
+
+configMapGenerator:
+  # Query-ui Config Patches
+  - name: query-ui-env-configjs
+    behavior: replace
+    files:
+      - ui/patches/config/env-config.js
+
+components:
+  - ../components/patches/virtualservice/host/apps
+  # Optional depending on Istio configuration
+  # - ../components/patches/authorizationpolicy/serviceaccount

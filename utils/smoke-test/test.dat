@@ -1,0 +1,1 @@
+Security-Label:*;sContent-Type:application/n-triples	<http://telicent.io/fake_data#person_00677_FIRSTNAME> <http://ies.data.gov.uk/ontology/ies4#inRepresentation> <http://telicent.io/fake_data#person_00677_PNAME2> . <http://telicent.io/fake_data#person_00677> <http://telicent.io/ontology/primaryName> "SMITH, john" .

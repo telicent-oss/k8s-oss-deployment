@@ -1,0 +1,6 @@
+#
+# Copyright (C) 2024 Telicent Limited
+#
+- op: replace
+  path: /spec/hosts/0
+  value: "YOUR.APP.DOMAIN.HERE.COM"
