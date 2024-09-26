@@ -16,10 +16,8 @@ environment.
 
 * [Pre-requisites](./10-pre-requisites.md)
 * [Set-up workload manifests](./20-setup.md)
-* [Create namespaces](./30-create-namespaces.md)
-* [Deploy Access](./40-deploy-access.md)
-* [Deploy Smart-Cache-Graph](./50-deploy-scg.md)
-* [Deploy Query UI](./60-deploy-query.md)
+* [Deploy federation server](./30-federation-server.md)
+* [Deploy federation client](./40-federation-client.md)
 
 ## Smoke testing the deployment
 
