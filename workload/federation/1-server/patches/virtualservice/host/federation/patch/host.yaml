@@ -3,4 +3,4 @@
 #
 - op: replace
   path: /spec/hosts/0
-  value: "YOUR.APP.DOMAIN.HERE"
+  value: "YOUR.FEDERATION.DOMAIN.HERE"

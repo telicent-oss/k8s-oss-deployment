@@ -36,25 +36,25 @@ E.G:
 ```
 $ ll -l
 total 48
--rw-r--r--@ 1 staff  staff   3.5K 18 Sep 14:56 README.md
-lrwxr-xr-x@ 1 staff  staff    22B 18 Sep 14:04 telicent -> k8s-manifests/telicent
-drwxr-xr-x@ 8 staff  staff   256B 18 Sep 14:08 workload
+-rw-r--r--@ 1 staff  staff   809B 26 Sep 15:17 README.md
+drwxr-xr-x@ 5 staff  staff   160B 26 Sep 15:13 docs
+lrwxr-xr-x@ 1 staff  staff    44B 26 Sep 15:30 telicent -> ../telicent-k8s-manifests-oss-v0.0.0/telicent
+drwxr-xr-x@ 3 staff  staff    96B 26 Sep 15:13 utils
+drwxr-xr-x@ 4 staff  staff   128B 26 Sep 15:13 workload
 ```
-
-<<<<<<<<<<<TODO>>>>>>>>>>>>>>>>>
 
 client/server
 
-The `workload/core` directory contains overlays for various elements of the Telicent
-deployment. It also contains shared components to reduce boilerplate and
-repetition.
+The `workload/federation` directory contains overlays for various elements of
+the Telicent federation deployment.
 
 ```
-tree -L 1 workload/core
-workload/core
-├── 1-namespaces
-├── 2-access
-├── 3-smart-cache-graph
-├── 4-query
-└── components
+tree -L 2 workload/federation
+workload/federation
+├── 1-server
+│   ├── kustomization.yaml
+│   └── patches
+└── 2-client
+    ├── kustomization.yaml
+    └── patches
 ```

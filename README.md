@@ -17,10 +17,12 @@ components.
 This example demonstrates how to deploy federation between two instances of open
 source CORE.
 
+* [Deploy federation](./docs/federation/index.md)
+
 ## Using this code
 
 - Fork or clone this repository then checkout a release tag.
-- Download the `telicent-k8s-manifests-oss` tarball from the corresponding
+- Download the `telicent-k8s-manifests-oss-$TAG` tarball from the corresponding
   release artifacts.
 
 The example instructions explain how to arrange the open source Kubernetes
