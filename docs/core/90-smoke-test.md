@@ -24,7 +24,7 @@ Review the resources that will be created:
 kubectl kustomize utils/smoke-test
 ```
 
-Create the Query UI component:
+Create the smoke test job:
 
 ```
 kubectl apply -k utils/smoke-test
