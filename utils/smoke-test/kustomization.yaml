@@ -12,7 +12,7 @@ patches:
   - patch: |-
       - op: replace
         path: /spec/template/spec/containers/0/env/0/value
-        value: kafka-controller-0.kafka-controller-headless.kafka.svc.cluster.local:9092
+        value: override.with.bootstrap.servers
     target:
       kind: Job
 
