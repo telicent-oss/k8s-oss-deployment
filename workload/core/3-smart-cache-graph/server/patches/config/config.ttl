@@ -120,7 +120,7 @@ PREFIX tdb2:    <http://jena.apache.org/2016/tdb#>
 
     # ABAC endpoint for user attributes
     authz:attributesURL <env:USER_ATTRIBUTES_URL>;
-    authz:hierarchiesURL <env:ABAC_HIERARCHIES_URL>;
+    authz:hierarchiesURL <env:ATTRIBUTE_HIERARCHY_URL>;
     .
 
 ## Storage of data in memory.
@@ -236,7 +236,7 @@ PREFIX tdb2:    <http://jena.apache.org/2016/tdb#>
 
     # ABAC endpoint for user attributes
     authz:attributesURL <env:USER_ATTRIBUTES_URL>;
-    authz:hierarchiesURL <env:ABAC_HIERARCHIES_URL>;
+    authz:hierarchiesURL <env:ATTRIBUTE_HIERARCHY_URL>;
     .
 
 ## Storage of data in memory.
