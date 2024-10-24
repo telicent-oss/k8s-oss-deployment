@@ -9,7 +9,11 @@ provides further information on the pre-requisites detailed in:
 
 The example assumes that there are two physically separate deployments of open
 source CORE and they have been deployed as per the CORE deployment
-[example](../core/index.md).
+[example](../core/index.md). The users in each instance should have their
+organisation set to:
+
+- Server: `org1`
+- Client: `org2`
 
 ## Istio ingress on the server CORE instance
 
@@ -75,3 +79,15 @@ with the apps OIDC authentication flow.
 ## Redis
 
 A Redis instance is required for the Federation client.
+
+## Kafka
+
+These additional Kafka topics should be pre-created with a single partion:
+
+Server:
+* `knowledge-filtered`
+* `knowledge-filtered-dlq`
+
+Client:
+* `federated-knowledge-filtered`
+* `federated-knowledge-filtered-dlq`
