@@ -21,13 +21,13 @@ Update the patch to the appropriate value
 Review the resources that will be created:
 
 ```
-kubectl kustomize utils/smoke-test
+kubectl kustomize utils/core/smoke-test
 ```
 
 Create the smoke test job:
 
 ```
-kubectl apply -k utils/smoke-test
+kubectl apply -k utils/core/smoke-test
 ```
 
 ### Check deployment status
@@ -55,7 +55,7 @@ Inspect the logs to see if SCG ingested the data. Look for a line similar to:
 The job (but not the data in Kafka) can be removed like so:
 
 ```
-kubectl delete -k utils/smoke-test
+kubectl delete -k utils/core/smoke-test
 ```
 
 ## Query the data
