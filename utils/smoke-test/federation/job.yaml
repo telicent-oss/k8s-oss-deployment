@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: load-test-data
+  name: load-federation-test-data
 spec:
   template:
     spec:

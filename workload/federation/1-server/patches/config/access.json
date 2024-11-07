@@ -3,7 +3,7 @@
         "registered_client": "telicent.io",
         "topics": [
             {
-                "name": "knowledge",
+                "name": "knowledge-filtered",
                 "granted_at": "2023-05-09T15:45:25.371402+01:00"
             }
         ],

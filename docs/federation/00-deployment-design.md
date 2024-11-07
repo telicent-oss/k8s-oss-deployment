@@ -1,8 +1,7 @@
 # Deployment design
 
 > Note this functionality is in beta. It will share all knowledge from the
-> server CORE with the client CORE. Future releases will address filtering the
-> knowledge to be sent from the server CORE to the client CORE.
+> server CORE with the client CORE.
 
 ## Structure of the deployment design
 
@@ -17,3 +16,6 @@ and pulls knowledge to the the client CORE.
 
 The server enforces client authentication and can be configured to limit the
 topics that are shared with the client.
+
+The PBAC filters enforce sharing rules based on configuration and the
+`policyInformation` header on each Kafka message.

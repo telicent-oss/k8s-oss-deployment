@@ -49,12 +49,17 @@ The `workload/federation` directory contains overlays for various elements of
 the Telicent federation deployment.
 
 ```
-tree -L 2 workload/federation
 workload/federation
 ├── 1-server
 │   ├── kustomization.yaml
 │   └── patches
-└── 2-client
+├── 2-client
+│   ├── kustomization.yaml
+│   └── patches
+├── 3-outgoing-filter
+│   ├── kustomization.yaml
+│   └── patches
+└── 4-incoming-filter
     ├── kustomization.yaml
     └── patches
 ```

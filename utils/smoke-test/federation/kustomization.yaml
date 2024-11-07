@@ -1,0 +1,23 @@
+#
+# Copyright (C) 2024 Telicent Limited
+#
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: default
+
+resources:
+  - job.yaml
+
+patches:
+  - patch: |-
+      - op: replace
+        path: /spec/template/spec/containers/0/env/0/value
+        value: b-3.devopsmskcluster.dic27x.c2.kafka.eu-west-2.amazonaws.com:9092,b-1.devopsmskcluster.dic27x.c2.kafka.eu-west-2.amazonaws.com:9092,b-2.devopsmskcluster.dic27x.c2.kafka.eu-west-2.amazonaws.com:9092
+    target:
+      kind: Job
+
+configMapGenerator:
+  # Query-ui Config Patches
+  - name: test-data
+    files:
+      - test.dat

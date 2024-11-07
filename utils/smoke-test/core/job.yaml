@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: load-core-test-data
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: adapter
+          image: "docker.io/bitnami/kafka:3.8.0-debian-12-r2"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: BOOTSTRAP_VALUE
+              value: override.with.bootstrap.servers
+          command:
+            - sh
+            - -c
+          args:
+            - |-
+              set -eu
+              kafka-console-producer.sh \
+              --bootstrap-server "$BOOTSTRAP_VALUE" \
+              --topic knowledge \
+              --property parse.headers=true \
+              --property headers.separator=";" < /data/test.dat
+          volumeMounts:
+            - name: data-volume
+              mountPath: /data
+      volumes:
+        - name: data-volume
+          configMap:
+            name: "test-data"
