@@ -21,3 +21,10 @@ configMapGenerator:
   - name: test-data
     files:
       - test.dat
+
+secretGenerator:
+  - name: kafka-auth-config
+    files:
+      - kafka-config.properties
+    options:
+      disableNameSuffixHash: true

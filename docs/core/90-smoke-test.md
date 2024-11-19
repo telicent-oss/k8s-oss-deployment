@@ -12,9 +12,15 @@ sufficient to prove the system.
 
 ### Adjust the Kafka brokers value
 
-[Source](../../utils/smoke-test/kustomization.yaml)
+[Source](../../utils/smoke-test/core/kustomization.yaml)
 
-Update the patch to the appropriate value
+Update the patch to the appropriate value.
+
+### Adjust the Kafka authentication configuration
+
+[Source](../../utils/smoke-test/core/kafka-config.properties)
+
+Update the username and password to the appropriate values
 
 ### Review and apply resources to the cluster
 
