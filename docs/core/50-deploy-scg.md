@@ -32,6 +32,12 @@ fk:bootstrapServers    "YOUR.KAFKA.BOOTSTRAP.SERVERS.COM:9092,YOUR.KAFKA.BOOTSTR
 In the SCG kustomization file update the inline patch for the block storage
 provider for the target cluster.
 
+### Update the kafka SASL password secret
+
+[Source](../../workload/core/3-smart-cache-graph/server/patches/secret/kafka-config.properties)
+
+Update the password.
+
 ## Review and apply resources to the cluster
 
 Review the resources that will be created:
