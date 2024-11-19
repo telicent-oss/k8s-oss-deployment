@@ -102,6 +102,12 @@ sufficient to prove the system.
 
 Update the patch to the appropriate value for the server
 
+### Adjust the Kafka authentication configuration
+
+[Source](../../utils/smoke-test/federation/kafka-config.properties)
+
+Update the username and password to the appropriate values
+
 ### Review and apply resources to the cluster
 
 Review the resources that will be created:

@@ -22,12 +22,18 @@ spec:
               kafka-console-producer.sh \
               --bootstrap-server "$BOOTSTRAP_VALUE" \
               --topic knowledge \
+              --producer.config=/app/config/kafka-auth/kafka-config.properties \
               --property parse.headers=true \
               --property headers.separator=";" < /data/test.dat
           volumeMounts:
             - name: data-volume
               mountPath: /data
+            - mountPath: /app/config/kafka-auth/
+              name: kafka-auth-config
       volumes:
         - name: data-volume
           configMap:
             name: "test-data"
+        - name: kafka-auth-config
+          secret:
+            secretName: kafka-auth-config

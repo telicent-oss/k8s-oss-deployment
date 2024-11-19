@@ -23,6 +23,12 @@ Update the client password hash and salt with the values generated earlier.
 
 Configure the federation host name.
 
+### Update the kafka SASL password secret
+
+[Source](../../workload/federation/1-server/patches/config/kafka-config.properties)
+
+Update the password.
+
 ## Review and apply resources to the cluster
 
 Review the resources that will be created:

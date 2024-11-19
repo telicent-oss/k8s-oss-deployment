@@ -30,3 +30,8 @@ secretGenerator:
       - ./patches/config/client-secret.env
     options:
       disableNameSuffixHash: true
+  - name: kafka-auth-config
+    files:
+      - patches/secret/kafka-config.properties
+    options:
+      disableNameSuffixHash: true

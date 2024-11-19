@@ -18,6 +18,12 @@ host configuration.
 
 Update the client password with the value generated earlier.
 
+### Update the kafka SASL password secret
+
+[Source](../../workload/federation/2-client/patches/secret/kafka-config.properties)
+
+Update the password.
+
 ## Review and apply resources to the cluster
 
 Review the resources that will be created:

@@ -25,3 +25,4 @@ configMapGenerator:
     envs:
       - patches/config/config.env
     behavior: merge
+    # NB the filter will re-use the same kafka-auth-config secret as the client

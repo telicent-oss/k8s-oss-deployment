@@ -160,8 +160,16 @@ class configured on the cluster.
 
 ## Kafka
 
-The applications currently do not authenticate to Kafka. We recommend that Kafka
-is limited to the network on which the Telicent components will run.
+### Authentication
+
+Kafka authentication is configured by passing in a location  of a file that
+contains the standard Kafka SASL configuration options. That is passed into the
+underlying libraries.
+
+Kafka is assumed to be deployed with SSL/SCRAM authentication configured. Other
+configurations may work (e.g. PLAIN_TEXT/SCRAM) but haven't been tested.
+
+### Topics
 
 These Kafka topics should be pre-created with a single partion:
 
