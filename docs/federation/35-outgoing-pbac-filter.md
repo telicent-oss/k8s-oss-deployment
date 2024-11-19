@@ -3,6 +3,9 @@
 This step will create the resources required to deploy the PBAC filter on the
 server side that selects the knowledge messages to be sent to the client.
 
+NB the filter reuses the Kafka authentication configuration secret created in
+the server deployment.
+
 ## Prepare the filter component resources
 
 ### Filter environment file
@@ -33,6 +36,5 @@ Check the status of:
 * Pod/Deployment/Replicaset
 
 ```
-TODO
 kubectl --context <SERVER CONTEXT> get all -n tc-federation -l app.kubernetes.io/name=pbac-federation-filter
 ```
