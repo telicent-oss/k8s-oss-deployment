@@ -12,7 +12,7 @@ patches:
   - patch: |-
       - op: replace
         path: /spec/template/spec/containers/0/env/0/value
-        value: b-3.devopsmskcluster.dic27x.c2.kafka.eu-west-2.amazonaws.com:9092,b-1.devopsmskcluster.dic27x.c2.kafka.eu-west-2.amazonaws.com:9092,b-2.devopsmskcluster.dic27x.c2.kafka.eu-west-2.amazonaws.com:9092
+        value: override.with.bootstrap.servers
     target:
       kind: Job
 
@@ -21,3 +21,10 @@ configMapGenerator:
   - name: test-data
     files:
       - test.dat
+
+secretGenerator:
+  - name: kafka-auth-config
+    files:
+      - kafka-config.properties
+    options:
+      disableNameSuffixHash: true
