@@ -271,7 +271,7 @@ PREFIX tdb2:    <http://jena.apache.org/2016/tdb#>
     fk:fusekiServiceName   "/ontology/upload";
     ## fk:replayTopic -- true for in-memory storage / false for TDB2 storage
     fk:replayTopic      false;
-    fk:stateFile        "/fuseki/databases/Replay-Ontology-RDF.state"
+    fk:stateFile        "/fuseki/databases/Replay-Ontology-RDF.state";
     # Additional Kafka Configuration properties are loaded from a file specified via
     # an environment variable
     # Empty default (the :} at the end) means if this variable is not set then no extra
