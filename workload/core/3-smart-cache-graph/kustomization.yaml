@@ -6,6 +6,8 @@ kind: Kustomization
 
 resources:
   - ../../../telicent/profiles/oss/smart-cache-graph
+  # If you are creating secrets manually include "resources"
+  - ./server/resources
 
 # Generic Component to substitute your domain in Istio policy
 components:
@@ -33,10 +35,3 @@ configMapGenerator:
     behavior: replace
     files:
       - server/patches/config/config.ttl
-
-secretGenerator:
-  - name: kafka-auth-config
-    files:
-      - server/patches/secret/kafka-config.properties
-    options:
-      disableNameSuffixHash: true

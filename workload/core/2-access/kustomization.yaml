@@ -21,6 +21,7 @@ secretGenerator:
       disableNameSuffixHash: true
     literals:
       - password=change.to.access.api.mongodb.password
+    behavior: replace
 
 # Merge/Replace config(s) tailored for your environment
 configMapGenerator:

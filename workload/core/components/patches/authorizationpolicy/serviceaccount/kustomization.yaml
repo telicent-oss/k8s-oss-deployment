@@ -18,17 +18,17 @@ patches:
   - patch: |-
       - op: replace
         path: /spec/rules/0/from/0/source/principals/0
-        value: "cluster.local/ns/istio-system/sa/provide.gateway.sa.identity"
+        value: "cluster.local/ns/istio-system/sa/PROVIDE.GATEWAY.SERVICE.ACCOUNT.IDENTITY"
     target:
       kind: AuthorizationPolicy
       name: allow-ingress-to-server|allow-ingress-to-access-ui|allow-ingress-to-query-ui|allow-ingress-to-user-portal-ui
   - patch: |-
       - op: replace
         path: /spec/rules/0/from/0/source/principals/0
-        value: "cluster.local/ns/istio-system/sa/provide.gateway.sa.identity"
+        value: "cluster.local/ns/istio-system/sa/PROVIDE.GATEWAY.SERVICE.ACCOUNT.IDENTITY"
       - op: replace
         path: /spec/rules/1/from/0/source/principals/0
-        value: "cluster.local/ns/istio-system/sa/provide.gateway.sa.identity"
+        value: "cluster.local/ns/istio-system/sa/PROVIDE.GATEWAY.SERVICE.ACCOUNT.IDENTITY"
     target:
       kind: AuthorizationPolicy
       name: allow-ingress-to-api
