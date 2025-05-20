@@ -5,7 +5,7 @@ patches:
   - patch: |-
       - op: replace
         path: /spec/rules/0/from/0/source/principals/0
-        value: "override.ingress.principal"
+        value: "cluster.local/ns/istio-system/sa/PROVIDE.GATEWAY.SERVICE.ACCOUNT.IDENTITY"
     target:
       kind: AuthorizationPolicy
       name: allow-ingress-to-federation-server
